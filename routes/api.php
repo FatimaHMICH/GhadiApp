@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnnounceClientController;
 use App\Http\Controllers\AnnounceDriverController;
+use App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('announcesClients', AnnounceClientController::class);
 
 Route::apiResource('announcesDrivers', AnnounceDriverController::class);
+
+Route::apiResource('profiles' ,ProfileController::class);
