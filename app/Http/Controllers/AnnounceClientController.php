@@ -39,6 +39,18 @@ class AnnounceClientController extends Controller
 
         //return Response
         return response()->json($announcesClients);
+    }
+    public function show($id){
+        
+        //return Response
+        return AnnounceClient::find($id);
+
+    }
+
+    public function search($luggage_type){
+
+        //return Response
+        return AnnounceClient::where('luggage_type','like','%'.$luggage_type.'%')->get();
 
     }
 }

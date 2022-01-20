@@ -23,3 +23,13 @@ Route::apiResource('announcesClients', AnnounceClientController::class);
 Route::apiResource('announcesDrivers', AnnounceDriverController::class);
 
 Route::apiResource('profiles' ,ProfileController::class);
+
+Route::get('/profiles' ,ProfileController::class );
+
+Route::get('/announcesClients/luggage/{luggage_type}', [AnnounceClientController::class, 'search']);
+
+Route::get('/announcesClients/{id}', [AnnounceClientController::class, 'show']);
+
+Route::get('/announcesDrivers/vehicule/{vehicule_type}', [AnnounceDriverController::class, 'search']);
+
+Route::get('/announcesDrivers/{id}', [AnnounceDriverController::class, 'show']);

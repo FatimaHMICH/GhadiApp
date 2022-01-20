@@ -37,6 +37,18 @@ class AnnounceDriverController extends Controller
 
         //return Response
         return response()->json($announcesDrivers);
+    }
+    public function show($id){
+        
+        //return Response
+        return AnnounceDriver::find($id);
+
+    }
+
+    public function search($vehicule_type){
+
+        //return Response
+        return AnnounceDriver::where('vehicule_type','like','%'.$vehicule_type.'%')->get();
 
     }
 }
