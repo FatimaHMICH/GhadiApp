@@ -16,5 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AnnounceClientSeeder::class);
         $this->call(AnnounceDriverSeeder::class);
         $this->call(ProfileSeeder::class);
+        $this->call(ClientSeeder::class);
+
+        $this->call(MriverSeeder::class);
     }
 }

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AnnounceClientController;
 use App\Http\Controllers\AnnounceDriverController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\MriverController;
 use App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,9 +24,18 @@ Route::apiResource('announcesClients', AnnounceClientController::class);
 
 Route::apiResource('announcesDrivers', AnnounceDriverController::class);
 
+Route::apiResource('client', ClientController::class);
+
+
+Route::apiResource('mriver', MriverController::class);
+
 Route::apiResource('profiles' ,ProfileController::class);
 
-Route::get('/profiles' ,ProfileController::class );
+Route::get('/client/{id}', [ClientController::class, 'show']);
+
+
+
+Route::get('/mriver/{id}', [MriverController::class, 'show']);
 
 Route::get('/announcesClients/luggage/{luggage_type}', [AnnounceClientController::class, 'search']);
 
